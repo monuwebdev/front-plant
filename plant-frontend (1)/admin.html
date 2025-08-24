@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admin — Plant Distribution</title>
+  <link rel="manifest" href="/manifest.webmanifest">
+  <style>
+    body { font-family: system-ui, Arial, sans-serif; margin:0; background:#f6f7f9; }
+    header { background:#111827; color:white; padding:16px; font-weight:700; }
+    main { max-width: 900px; margin: 24px auto; padding: 0 16px; }
+    .card { background:white; border-radius:16px; padding:16px; box-shadow:0 10px 24px rgba(0,0,0,.06); }
+    button { padding:10px 14px; border-radius:10px; border:0; background:#111827; color:white; cursor:pointer; }
+    input { padding:10px 12px; border:1px solid #e5e7eb; border-radius:10px; }
+    table { width:100%; border-collapse: collapse; margin-top:12px; }
+    th, td { padding:10px; border-bottom:1px solid #e5e7eb; text-align:left; }
+    th { background:#f3f4f6; }
+    .row { display:flex; gap:12px; align-items:center; flex-wrap: wrap; }
+    .muted { color:#6b7280; font-size:12px; }
+    pre#adminOut { white-space:pre-wrap; background:#f3f4f6; padding:12px; border-radius:12px; }
+  </style>
+</head>
+<body>
+  <header>Admin — Plant Distribution</header>
+  <main>
+    <div class="card">
+      <div class="row">
+        <button onclick="load()">Refresh</button>
+        <input id="search" placeholder="Search Aadhaar..." oninput="render()" />
+        <span class="muted">Requires backend endpoint: GET /api/distributions</span>
+      </div>
+      <div id="tableWrap"></div>
+      <pre id="adminOut"></pre>
+    </div>
+  </main>
+  <script>
+    const API_BASE = "https://new-plant-n9jj.onrender.com";
+  </script>
+  <script src="/admin.js"></script>
+</body>
+</html>
